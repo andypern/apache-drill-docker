@@ -2,7 +2,7 @@
 #
 # VERSION 0.1 - not for production, use at own risk
 # General instructions: https://drill.apache.org/docs/install-drill-introduction/
-# 
+#
 
 
 #
@@ -16,6 +16,7 @@ MAINTAINER mkieboom @mapr.com
 # Prerequisite: Install Java, tar and create Drill folders
 # http://doc.mapr.com/display/MapR/Preparing+Each+Node#PreparingEachNode-java
 #
+RUN yum install -y which
 RUN yum install -y tar java-1.8.0-openjdk-devel && \
     mkdir -p /drill-scripts && \
     mkdir -p /opt/drill
@@ -36,7 +37,7 @@ RUN chown root:root /drill-scripts/bootstrap.sh && \
 ENV BOOTSTRAP /drill-scripts/bootstrap.sh
 
 #
-# Expose the Apache Drill Web UI 
+# Expose the Apache Drill Web UI
 # https://drill.apache.org/docs/storage-plugin-registration/
 #
 EXPOSE 8047
