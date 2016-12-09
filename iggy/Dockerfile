@@ -11,3 +11,5 @@
 FROM andypern/apache-drill-docker:v3
 
 MAINTAINER andypern@gmail.com
+
+ADD core-site.xml /opt/drill/apache-drill-1.9.0/conf/core-site.xml
